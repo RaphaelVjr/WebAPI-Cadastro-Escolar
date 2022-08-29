@@ -1,20 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CadastroEscolar_WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CadastroEscolar_WebAPI.Data
 {
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options) { }        
-        public DbSet<Aluno>? Alunos { get; set; }
-        public DbSet<Professor>? Professores { get; set; }
-        public DbSet<Disciplina>? Disciplinas { get; set; }
-        public DbSet<AlunoDisciplina>? AlunosDisciplinas { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Professor> Professores { get; set; }
+        public DbSet<Disciplina> Disciplinas { get; set; }
+        public DbSet<AlunoDisciplina> AlunosDisciplinas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

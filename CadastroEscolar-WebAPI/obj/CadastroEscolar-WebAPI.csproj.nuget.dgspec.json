@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR & .NET.CORE\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj": {}
+    "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR\\WevPro-WebAPI-Cadastro-Escolar\\WevPro-WebAPI-Cadastro-Escolar\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR & .NET.CORE\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj": {
+    "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR\\WevPro-WebAPI-Cadastro-Escolar\\WevPro-WebAPI-Cadastro-Escolar\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR & .NET.CORE\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR\\WevPro-WebAPI-Cadastro-Escolar\\WevPro-WebAPI-Cadastro-Escolar\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj",
         "projectName": "CadastroEscolar-WebAPI",
-        "projectPath": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR & .NET.CORE\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj",
+        "projectPath": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR\\WevPro-WebAPI-Cadastro-Escolar\\WevPro-WebAPI-Cadastro-Escolar\\CadastroEscolar-WebAPI\\CadastroEscolar-WebAPI.csproj",
         "packagesPath": "C:\\Users\\rapha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR & .NET.CORE\\CadastroEscolar-WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\rapha\\Documents\\Curso Programador BR\\ANGULAR\\WevPro-WebAPI-Cadastro-Escolar\\WevPro-WebAPI-Cadastro-Escolar\\CadastroEscolar-WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rapha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.8, )"

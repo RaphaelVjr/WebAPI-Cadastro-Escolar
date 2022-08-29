@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Professor } from '../models/Professor';
+import { ProfessorService } from './professor.service';
 
 @Component({
   selector: 'app-professores',
@@ -14,18 +15,11 @@ export class ProfessoresComponent implements OnInit {
   public profForm: FormGroup;
   public titulo = 'Professores';
   public professorSelecionado!: Professor;
+  public modo: string;
   
 
 
-  public professores = [
-  {id: 1, nome: 'Carlos', disciplina:'Matemática' },
-  {id: 2, nome: 'Ricardo', disciplina:'Quimica' },
-  {id: 3, nome: 'Tiago', disciplina:'Física' },
-  {id: 4, nome: 'Rubens', disciplina:'Português' },
-  {id: 5, nome: 'Clara', disciplina:'Inglês' },
-  {id: 6, nome: 'Isabela', disciplina:'História' },
-  {id: 7, nome: 'Celia', disciplina:'Literatura' },
-  ];
+  public professores: Professor[];
 
  
   openModal(template: TemplateRef<any>) {
@@ -33,11 +27,25 @@ export class ProfessoresComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder, 
-              private modalService: BsModalService) { 
+              private modalService: BsModalService,
+              private professorService: ProfessorService) { 
     this.criarForm();
   }
 
   ngOnInit() {
+    this.carregarProfessores();
+  }
+
+
+  carregarProfessores() {
+    this.professorService.getAll().subscribe(
+      (professores: Professor[]) => {
+        this.professores = professores;
+      },
+      (erro: any) => {
+        console.error(erro);
+      }
+    );
   }
 
   criarForm(){
@@ -47,6 +55,20 @@ export class ProfessoresComponent implements OnInit {
     });
   }
 
+  salvarProfessor(professor: Professor) {
+  (professor.id !== 0) ? this.modo = 'put' : this.modo = 'post';
+
+    this.professorService[this.modo](professor).subscribe(
+      (retorno: Professor) => {
+        console.log(retorno);
+        this.carregarProfessores();
+      },
+      (erro: any) => {
+        console.log(erro);
+      }
+    );
+  }
+
 profSubmit() {
   console.log(this.profForm.value);
 }
@@ -54,6 +76,11 @@ profSubmit() {
   professorSelect(professor: Professor) {
     this.professorSelecionado = professor;
     this.profForm.patchValue(professor);
+  }
+
+  professorNovo() {
+    this.professorSelecionado = new Professor();
+    this.profForm.patchValue(this.professorSelecionado);
   }
 
   voltar() {

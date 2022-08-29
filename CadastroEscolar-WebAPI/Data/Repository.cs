@@ -127,5 +127,10 @@ namespace CadastroEscolar_WebAPI.Data
 
             return await query.FirstOrDefaultAsync();
         }
+
+        public Task GetAlunoAsyncById(object alunoId, bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

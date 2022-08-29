@@ -1,5 +1,10 @@
 export class Professor {
-    id!: Number;
+    constructor() {
+    this.id = 0;
+    this.nome = '';
+        
+}
+    id!: number;
     nome!: string;
     disciplina!: string;
 }
